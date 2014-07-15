@@ -74,5 +74,42 @@ A LIST!!
 	as it holds different data-types, each element is a vector of elements of that data-type
 	symbol : [[1]]
 	
+Factor : 
+	used for ordering data!
+	catergorizing data
+	its like enums!
+	its integer based.
 	
+	example : x <- factor(c("yes" , "yes", "no" ,"no" , "yes"))
+				Levels of this factor : yes , no
+				
+	tables(x) : gives the frequency of all the levels present
+	unclass(x) : will give the internal INT values of the different elements
+	
+	
+	Baseline element : the level from which the internal numbering(INT) of the 
+	elements start.
+	
+						:Can be made explicit by using the levels() function
+						: levels = c("yes", "no")
+		
+		
+	
+	
+Missing Values
+	is.na()
+	is.nan()
+	NaN is a na but the reverse is not always a true
+	
+Data Frames:
+	used to store tabular data
+	a special type of list.
+	every element is a list of the same length
+	but every elemnt of the list needn't be of the same type
+	attribute : row.names
+	function : read.table() or read.csv()
+	can be converted/coerce to a matric by data.matrix
+	
+	
+	Example :  x <- data.frame(foo = 1:4 , bar = c(t,f,t,f))
 	
