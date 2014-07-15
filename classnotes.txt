@@ -1,0 +1,78 @@
+getwd() : get working directory
+source("code.R")  : to load a function
+
+everything is an object
+Data types:
+	char
+	numeric
+	integer
+	complex
+	logical
+	
+the most basic : vector --> but a homogeneous container
+
+LIST --> heterogenous vector
+empty vector --> vector()
+
+Numbers: 
+a numeric object
+Inf --> stands for infinity, a special number
+NaN --> not a number
+
+Attributes:
+	names, dimnames
+	dimensions
+	class
+	length
+	other user-defined attributes
+	
+	attributes() : a function
+	
+Assignment Operator :  x <- 1
+Comments : ##
+
+[1] : this indicates that the variable is a vector	
+
+x <- 1:20
+
+Creating vectors:
+	the "c()" function
+	the "vector()" function
+	
+	example  :  x <- c(1,2,3,4)
+	
+Mixing Objects (implicit coercion)
+	y <- c(1.7,"a")
+	
+	--> in such cases, a simple coercion happens, and all the elements 
+	are converted to a same type.
+	
+Explicit Coercion 
+		x <- 0:6
+		as.numeric(x);
+		
+Matrices :
+	Nothing but a vector with the attribute DIMENSION
+	examples : m <- matrix(1:6 , nrow = 2 , ncol = 3)
+
+	VIMP : they get constructed column wise!!!!!
+	
+	You can convert a vector to a matrix by just giving it a dim() attribute
+	m <- 1:10
+	dim(m) <- c(2,5)
+	
+	
+	cbind-ING and rbind-ING
+	x <- 1:3
+	y <- 4:6
+	
+	cbind(x,y) 
+	rbind(x,y)
+	
+A LIST!!
+	its like a vector of vectors!
+	as it holds different data-types, each element is a vector of elements of that data-type
+	symbol : [[1]]
+	
+	
+	
