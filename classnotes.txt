@@ -112,4 +112,39 @@ Data Frames:
 	
 	
 	Example :  x <- data.frame(foo = 1:4 , bar = c(t,f,t,f))
+
+All the variable can have names;
+function :  names()
+
+
+Subsetting:
+	'[' : to get the element with the same class as that of the parent
+	'[[' : for getting the elements of a list
+	'$' : to get the elements of  a list with names	
+	
+	
+	
+	mat(1,2)
+	
+Note: 
+	when you try to extract a single element from a matric , you do 
+	not get a 1 x 1 matrix in return but just a single element.
+	In order to turn off this default behaviour, set the DROP=flase
+	
+	example x[1,2,frop=FLASE]
+	
+	Similarly , when you sub-set a single rox/column, you don't get a matrix, but a list in return.
+	Again you can use drop=FALSE
+
+Subsetting a list : 
+		x <- lisut(foor  =1:4 , bar = 0.6)
+		x[1]
+		x[[1]]
+		x$bar : element associated with the element $bar
+		a["bar"] //good thing, you dont need to remember its index
+	
+		if you want the "indexed name" to be dynamic then you use 2 brackets
+		name <- "foo"
+		x[[name]]
+	
 	
