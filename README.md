@@ -1,6 +1,6 @@
 Coursera-R-Programming
 ======================
-This is the personal notes and the programming assignments that I made during the following online course.
+These are the personal notes and the programming assignments that I made during the following online course.
 
 A programming course offered on Coursera,
 "R Language"
