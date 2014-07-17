@@ -147,4 +147,25 @@ Subsetting a list :
 		name <- "foo"
 		x[[name]]
 	
+Read and write data
+	 read.table
+	 read.csv
+	 readlines
+	source //for reading in the R codes into the eexcutable environment
+	dget //read R objects
+	load //reading binary files
+
+
+writing:
+	write.table
+	writeLines
+	dump
+	dput
+	save
+	serialize
+
+read.csv is same as read.table except that the delimiter is a comma
+
+please always specify the TYPE of data in the file , and specify the same using colClasses, else R will take a lot of time figuring out what kind of classes its reading and in case of large datasets it will slow down thigs pretty bad
+
 	
