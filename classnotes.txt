@@ -251,3 +251,7 @@ Functions:
 		functions(a,b,...) //generic args!!!
 
 		the function returns what ever the last expression of the function evaluates to
+		
+		
+Scoping Rules : 
+	search() , will tell you where all the functions are searched for . Its like the environment inside which R is running
