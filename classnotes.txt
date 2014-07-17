@@ -120,10 +120,29 @@ function :  names()
 Subsetting:
 	'[' : to get the element with the same class as that of the parent
 	'[[' : for getting the elements of a list
-	'$' : to get the elements of  a list with names	
+	'$' : to get the elements of  a list with names		
 	
 	
+	l <- list(foo = c(1:4) , bar = c(5:9))
+	l[["foo"]]
+	l$foo
 	
+	name = "foo"
+	l[[name]]  //this implies l$foo 
+	
+	//to get the multiple elements of the list: for example if the list has three elements
+	l(c(1,3)), will return the first and the third element of the list
+	
+	Nested list : 
+	lol <- list(a = list(10,12,123))
+	lol[[1]][[2]] ==> 12
+
+	
+	Partial matching!!
+		when using $ sign , you can give a partial name match too.
+		when you use the [[ operator this is not the case, so for that 
+		you the following
+		x[["a" , exact=FALSE]]
 	mat(1,2)
 	
 Note: 
@@ -146,7 +165,15 @@ Subsetting a list :
 		if you want the "indexed name" to be dynamic then you use 2 brackets
 		name <- "foo"
 		x[[name]]
-	
+
+		incase GOOD <- [TRUE,FLASE...] is a logical list.
+		and you say X[good] , this will return a list that is a subset of
+		X, but with the elements positioned such that they are TRUE in GOOD
+
+		there is something called...
+			complete.cases(),
+			which too helps in removing the NA elements from the list
+		
 Read and write data
 	 read.table
 	 read.csv
@@ -168,4 +195,13 @@ read.csv is same as read.table except that the delimiter is a comma
 
 please always specify the TYPE of data in the file , and specify the same using colClasses, else R will take a lot of time figuring out what kind of classes its reading and in case of large datasets it will slow down thigs pretty bad
 
+there is an argument called NROWs, which gives R an estimate on the number of rows it will be reading. Helps it in estimating the RAM usage.
+Even if you give the wrong number doesnt matter as it will still read all of them.
 	
+
+Textual Formats , not very space efficient, but easier to read
+
+**dump same as dput but , dump allows you to dump multiple R objects together
+
+Interface to the outside world
+	file, gzfile, bzfile, url
