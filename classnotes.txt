@@ -1,4 +1,6 @@
 getwd() : get working directory
+dir()
+to change the working directory : got to FILE--> working directory
 source("code.R")  : to load a function
 
 everything is an object
@@ -6,7 +8,7 @@ Data types:
 	char
 	numeric
 	integer
-	complex
+	complexed
 	logical
 	
 the most basic : vector --> but a homogeneous container
@@ -105,7 +107,7 @@ Data Frames:
 	used to store tabular data
 	a special type of list.
 	every element is a list of the same length
-	but every elemnt of the list needn't be of the same type
+	but every element of the list needn't be of the same type
 	attribute : row.names
 	function : read.table() or read.csv()
 	can be converted/coerce to a matric by data.matrix
@@ -117,7 +119,7 @@ All the variable can have names;
 function :  names()
 
 
-Subsetting:
+Sub-setting:
 	'[' : to get the element with the same class as that of the parent
 	'[[' : for getting the elements of a list
 	'$' : to get the elements of  a list with names		
@@ -151,6 +153,8 @@ Note:
 	In order to turn off this default behaviour, set the DROP=flase
 	
 	example x[1,2,frop=FLASE]
+	
+	**ncol function to get the number of columns, similarly nrow(), for the number of rows
 	
 	Similarly , when you sub-set a single rox/column, you don't get a matrix, but a list in return.
 	Again you can use drop=FALSE
@@ -204,4 +208,46 @@ Textual Formats , not very space efficient, but easier to read
 **dump same as dput but , dump allows you to dump multiple R objects together
 
 Interface to the outside world
-	file, gzfile, bzfile, url
+	file, gzfile, bzfile, url 
+
+	
+	
+LOOPS and Stuff
+	for(i in 1:10)
+	{
+	}
+	
+	for(i in seq_along(x))
+	{
+	}
+	
+	for(letter in x)
+	{
+	}
+	
+	
+Functions:
+	using the function()n directive.
+	function is also stored as an R object
+	
+	f <- funciotn(<args>) { do something}
+	
+	**functions are considered "first class objects", and so they are like
+	normal R objects
+	
+	Functions with named arguments, and with default values
+	
+	**function FORMALS(), to get the args of a function
+	
+	Example :
+		f <- function(a,b)
+		{
+		}
+		
+	Lazy evaluation:
+		An argument is not evaluated, until and unless its not used
+	
+	
+		functions(a,b,...) //generic args!!!
+
+		the function returns what ever the last expression of the function evaluates to
