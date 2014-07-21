@@ -36,3 +36,20 @@ columnMean <- function(mat) {
 	means
 
 }
+
+#make.power is capable of returning a function, which will have the
+#value of "n", already in its environment, and thus, it will be capable 
+#of raising the number "x" passed to it, to that "n".
+#thus make.power is a generic power function builder
+#example:
+#	sqr <- make.power(2)
+#	sqr_of_2 <- sqr(2)
+
+
+make.power <- function(n) {
+
+	pow <- function(x) {
+		x^n
+	}
+	pow
+}

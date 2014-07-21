@@ -1,5 +1,7 @@
 getwd() : get working directory
 dir()
+
+ls(environment(function_name)), to get the environment of the function listed out
 to change the working directory : got to FILE--> working directory
 source("code.R")  : to load a function
 
@@ -255,3 +257,123 @@ Functions:
 		
 Scoping Rules : 
 	search() , will tell you where all the functions are searched for . Its like the environment inside which R is running
+	
+	R uses static scoping or 
+	
+	We can have a function inside another function
+	
+	
+Vectorized Operations :
+	Element By element Matrix Multiplication  : x * y
+	True Matrix Multiplication :  x %*% y
+
+Dates and Times:
+		Dates : Date class (number of days since 1970-01-01)
+		Time : POSIXct and POSIXlt (number of seconds since 1970-01-01)
+		
+		x <- as.Date("1970-01-01");
+		unclass(x)
+		
+		POSIXct : uses a huge integer underneath
+		POSIXlt : uses a list internally
+		
+		general funtions on them : weekdays , months , quarter
+	
+	
+		as.POSIXct , as.POSIXlt
+		
+		x <- Sys.time()
+		
+		unclass(x)
+		
+		STRPTIME() , function!!!
+		
+Looping Functions :
+	lapply	: 
+		loop over a list
+		function(X , function pointer , ...)
+		
+	runif : this is a function to generate random numbers
+			: It takes in argument as the number of random numbers you want
+			: min = , max , can be specified as its arguments too
+			
+			
+	sapply : 
+		same as sapply, but just tries to simplify the result it returns
+		returns a single element in case the answer is a list of length 1
+		returns a matrix in case the result is a list of vectors of the same length
+		
+	tapply : 
+		used to apply function over subsets of a vector. No clue why its named like that
+		
+		function( X , INDDEX ,FUN = NULL , ... , simplify = TRUE)
+		how does it work?
+			we have two vectors , 
+			the first one is the one, which is the one , based on whose length
+			we shall be dividing the second vector.
+			The second vector is the target vector which will be divided and given to the FUNCTIOn
+		
+NOTE!!! (some confusing stuff here!)
+		function  : gl()
+		gl(number_of_levels , number of elements in eash level) , 
+		this function is used to create factors/level
+		
+		split( the_vector_that_we_want_to_split , factors_returned_by_gl)
+	
+		example : 
+			x <- c(1:30)
+			fac <- gl(3 , 10)  //this will have 30 elements
+			
+			split(x, fac) ,
+				will divide x, into 3 groups of 10 each
+			
+			fac1 <- gl(2,15) //will have a total of 30 elements
+			split(x , fac1)
+				will divide x into 2 groups of 15 elements each
+			
+	
+Example : 
+	consider the data set of Ozone, Temp... so on given in the week one assignment.
+	Now if we want to split them using the MONTH column.
+	
+	s <- split(dataset , dataset$Month)
+	//Now we know that the column Month is not of the type Vector, 
+	but as it takes only thr values 5,6,7, it can act as one.
+	
+	Now if we want to take the means of the column data, we can do the following
+	
+	lapply(s , function colMeans(x[, c("Ozone","Solar.R","Wind")], na.rm = TRUE))	
+	sapply(s , function colMeans(x[, c("Ozone","Solar.R","Wind")]))	
+	
+	Note : attribute na.rm ==>> to remove the NA entries befor the MEAN calculation
+	
+Splitting on more than one level : 
+		f1 <- gl(2,5)
+		f2 <- gl(5,2)
+		interaction(f1,f2)
+			this will return a new set of factor combining the two above levels
+	
+MAAPLY:
+	multivariate apply of sorts which applies a function in parallel over a 
+	set of arguments
+	
+invisible(x)
+		a function that returns invisibly, will make sure that it returns
+	the value but nothing is printed on the console	
+	
+	
+Debugging!! :
+	traceback
+		prints the function call stack
+		
+	debug:
+		when you mark a function with this, you can execute it line by line
+		--stops execution at the beginning of the function
+	browser:
+		to go to the debug mode in the middle of a function
+	
+	trace:
+		insert the debugging code without editing the main function
+	
+	recover :
+		works like  a try catch block, and you can browse through the function call stack
