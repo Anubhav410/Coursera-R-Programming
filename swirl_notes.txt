@@ -1,2 +1,54 @@
 seq(0,10,by=0.5)
 seq(0,10,length=5)
+
+for instance we have a list/vector and we need a sequence of the same length : 
+	seq(along = my_seq) //will extract the lenght of the ,my_seq
+	
+seq_along(my_seq)
+
+replicate : 
+		rep(0,times = 10)
+		rep(c(0,1,2) , times = 40)
+		rep(c(0,1,2) , each = 40)
+		
+		
+Character vectors : 
+	If you wish to join a character vector to make one single string, then use the paste() function
+		paste(my_char_vector , collapse = " ")
+		
+		paste("hello" , "world! " , sep= " ")
+		
+		paste(LETTERS , 1:4 , sep="-")
+		
+Remember !!!
+	my_data == NA , is not the same as is.na() function, as NA is not a value, but just a place-holder with a value that is not available, so 
+	when you try to compare it with something, it just returns another place-holder with nothing in it.
+	
+	internally the TRUEs ans FLASE si representeded as 1/0, so you can always ADD the vlalues up .... sum(my_na)
+	
+	
+Negative indexing:	
+	to get all the elements of the vectors except the onecs with the negative 
+		x[c(-2,-10)]  // all elements except the 2 and 10th element
+		OR
+		x[-c(2,10)]
+		
+		
+If two vectors have the same length, same named variable with the same value then they are IDENTICAL...
+	identical(vect, vect2)
+	
+	
+Matrices and Vectors:
+	both are same but matrices have only the same kind of elements unlike data frames
+	
+	
+Vectors do not have a DIM() attribute, as they are not matrices
+As soon as we give a vector a DIM attribute it gets converted to a matrix
+
+The matrix() function:
+	
+	matrix(data = NA, nrow = 1, ncol = 1, byrow = FALSE,dimnames = NULL)
+	   
+data.frame 
+	allows us to store data of different class along with each other
+	
